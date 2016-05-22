@@ -156,8 +156,8 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         let farFocusMM = calculateFarFocus(focusMM, hfocal: hfocalMM, lens: lens!)
         let nearHFocalMM = calculateNearFocus(hfocalMM, hfocal: hfocalMM, lens: lens!)
         let farHFocalMM = calculateFarFocus(hfocalMM, hfocal: hfocalMM, lens: lens!)
-        let widthAtFocusMM = 2*(focusMM / atan((atan(settings.getCameraFormat("Width")*lens!))/4*lens!))
-        
+        let widthAtFocusMM = 2 * focusMM * (settings.getCameraFormat("Width") / (2 * lens!))
+    
         
         //get unit values
         let nearFocus = round(convertToUnit(nearFocusMM, unit: unit)*100)/100
@@ -166,7 +166,7 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         let hFocal = round(convertToUnit(hfocalMM, unit: unit)*100)/100
         let farHFocal = round(convertToUnit(farHFocalMM, unit: unit)*100)/100
         let dof = round((farFocus - nearFocus)*100)/100
-        let widthAtFocus = round(widthAtFocusMM*100)/100
+        let widthAtFocus = round(convertToUnit(widthAtFocusMM, unit: unit)*100)/100
         
         
         nearFocusLabel.text = "\(nearFocus) \(unit)"
