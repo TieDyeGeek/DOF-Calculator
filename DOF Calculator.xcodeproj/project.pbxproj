@@ -488,6 +488,7 @@
 				F57D110E1CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F57D110F1CEB930200324173 /* Build configuration list for PBXNativeTarget "DOF CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +497,7 @@
 				F57D11111CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F57D11121CEB930200324173 /* Build configuration list for PBXNativeTarget "DOF CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +506,7 @@
 				F57D11141CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
