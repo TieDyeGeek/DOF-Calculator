@@ -26,7 +26,7 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     //define picker view data sources
     var lensData = [String]()
-    let fstopData = ["f/1.8","f/2.0","f/3.5"]
+    let fstopData = ["f/0.7","f/0.8","f/0.9","f/1.0","f/1.1","f/1.2","f/1.4","f/1.6","f/1.7","f/1.8","f/2","f/2.2","f/2.4","f/2.5","f/2.8","f/3.2","f/3.3","f/3.5","f/4","f/4.5","f/4.8","f/5.0","f/5.6","f/6.3","f/6.7","f/7.1","f/8","f/9","f/9.5","f/10","f/11","f/13","f/14","f/16","f/18","f/19","f/20","f/22","f/25","f/27","f/29","f/32","f/36","f/38","f/40","f/45","f/51","f/54","f/57","f/64"]
     var distanceData = [Int]()
     
     
@@ -92,7 +92,7 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         
         
-        
+        //TODO
         //set default values for pickers
         
         
@@ -189,7 +189,11 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     //TODO
     func getFNumber() -> Double {
-        let i: Double = 1 //f/1.4
+        
+        let fString = fstopData[lensFstopDistancePickerView.selectedRowInComponent(1)]
+        let fValue = Double(fString.substringFromIndex(fString.startIndex.successor().successor()))
+        
+        let i = pow( pow(2.0,fValue!), 0.5)
         
         return pow(2, i/2.0)
     }
