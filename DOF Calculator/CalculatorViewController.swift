@@ -281,7 +281,6 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     
-    
     //Double convert FROM MM
     @nonobjc
     func convertToUnit(value: Double, unit: String) -> Double {
