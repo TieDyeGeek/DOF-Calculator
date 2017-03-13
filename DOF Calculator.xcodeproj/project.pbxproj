@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F57D10E61CEB930100324173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10E51CEB930100324173 /* AppDelegate.swift */; };
-		F57D10E81CEB930100324173 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10E71CEB930100324173 /* FirstViewController.swift */; };
-		F57D10EA1CEB930100324173 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10E91CEB930100324173 /* SecondViewController.swift */; };
+		F57D10E81CEB930100324173 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10E71CEB930100324173 /* CalculatorViewController.swift */; };
+		F57D10EA1CEB930100324173 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10E91CEB930100324173 /* SettingsViewController.swift */; };
 		F57D10ED1CEB930100324173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D10EB1CEB930100324173 /* Main.storyboard */; };
 		F57D10EF1CEB930200324173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57D10EE1CEB930200324173 /* Assets.xcassets */; };
 		F57D10F21CEB930200324173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D10F01CEB930200324173 /* LaunchScreen.storyboard */; };
 		F57D10FD1CEB930200324173 /* DOF_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10FC1CEB930200324173 /* DOF_CalculatorTests.swift */; };
 		F57D11081CEB930200324173 /* DOF_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D11071CEB930200324173 /* DOF_CalculatorUITests.swift */; };
+		F5D96A401E1C81B900955952 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D96A3F1E1C81B900955952 /* Settings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +38,8 @@
 /* Begin PBXFileReference section */
 		F57D10E21CEB930100324173 /* DOF Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DOF Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D10E51CEB930100324173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F57D10E71CEB930100324173 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F57D10E91CEB930100324173 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F57D10E71CEB930100324173 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		F57D10E91CEB930100324173 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F57D10EC1CEB930100324173 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F57D10EE1CEB930200324173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F57D10F11CEB930200324173 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		F57D11031CEB930200324173 /* DOF CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DOF CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D11071CEB930200324173 /* DOF_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOF_CalculatorUITests.swift; sourceTree = "<group>"; };
 		F57D11091CEB930200324173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5D96A3F1E1C81B900955952 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				F57D10E51CEB930100324173 /* AppDelegate.swift */,
-				F57D10E71CEB930100324173 /* FirstViewController.swift */,
-				F57D10E91CEB930100324173 /* SecondViewController.swift */,
+				F57D10E71CEB930100324173 /* CalculatorViewController.swift */,
+				F57D10E91CEB930100324173 /* SettingsViewController.swift */,
 				F57D10EB1CEB930100324173 /* Main.storyboard */,
+				F5D96A3F1E1C81B900955952 /* Settings.plist */,
 				F57D10EE1CEB930200324173 /* Assets.xcassets */,
 				F57D10F01CEB930200324173 /* LaunchScreen.storyboard */,
 				F57D10F31CEB930200324173 /* Info.plist */,
@@ -191,18 +194,25 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cameron Anderson";
 				TargetAttributes = {
 					F57D10E11CEB930100324173 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = H9SXWJQ397;
+						LastSwiftMigration = 0800;
 					};
 					F57D10F71CEB930200324173 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = H9SXWJQ397;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = F57D10E11CEB930100324173;
 					};
 					F57D11021CEB930200324173 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = F57D10E11CEB930100324173;
 					};
 				};
@@ -233,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F57D10F21CEB930200324173 /* LaunchScreen.storyboard in Resources */,
+				F5D96A401E1C81B900955952 /* Settings.plist in Resources */,
 				F57D10EF1CEB930200324173 /* Assets.xcassets in Resources */,
 				F57D10ED1CEB930100324173 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F57D10EA1CEB930100324173 /* SecondViewController.swift in Sources */,
+				F57D10EA1CEB930100324173 /* SettingsViewController.swift in Sources */,
 				F57D10E61CEB930100324173 /* AppDelegate.swift in Sources */,
-				F57D10E81CEB930100324173 /* FirstViewController.swift in Sources */,
+				F57D10E81CEB930100324173 /* CalculatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +341,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -353,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -376,10 +390,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -393,9 +410,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -405,10 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-Calculator";
+				PRODUCT_BUNDLE_IDENTIFIER = "info.CameronAnderson.DOF-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,10 +438,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-Calculator";
+				PRODUCT_BUNDLE_IDENTIFIER = "info.CameronAnderson.DOF-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -427,10 +453,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF CalculatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-CalculatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DOF Calculator.app/DOF Calculator";
 			};
 			name = Debug;
@@ -439,10 +468,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF CalculatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-CalculatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DOF Calculator.app/DOF Calculator";
 			};
 			name = Release;
@@ -450,10 +482,15 @@
 		F57D11131CEB930200324173 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "DOF CalculatorUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-CalculatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "DOF Calculator";
 			};
 			name = Debug;
@@ -461,10 +498,15 @@
 		F57D11141CEB930200324173 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "DOF CalculatorUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.cwa106.ecom.wiu.DOF-CalculatorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "DOF Calculator";
 			};
 			name = Release;
@@ -479,7 +521,7 @@
 				F57D110B1CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F57D110C1CEB930200324173 /* Build configuration list for PBXNativeTarget "DOF Calculator" */ = {
 			isa = XCConfigurationList;
@@ -488,7 +530,7 @@
 				F57D110E1CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F57D110F1CEB930200324173 /* Build configuration list for PBXNativeTarget "DOF CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -497,7 +539,7 @@
 				F57D11111CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F57D11121CEB930200324173 /* Build configuration list for PBXNativeTarget "DOF CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,7 +548,7 @@
 				F57D11141CEB930200324173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
