@@ -1,3 +1,5 @@
+https://github.com/ccgus/fmdb
+
 If you are using FMDB in your project, I'd love to hear about it.  Let Gus know
 by sending an email to gus@flyingmeat.com.
 
