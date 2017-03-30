@@ -2,13 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Camera Make</key>
-	<string>Canon</string>
-	<key>Camera Model</key>
-	<string>7D</string>
+	<key>Version</key>
+	<string>1</string>
 	<key>Unit</key>
 	<string>ft</string>
 	<key>Theme</key>
 	<string>Day</string>
+	<key>Camera Maker</key>
+	<string>Canon</string>
+	<key>Camera Model</key>
+	<string>7D</string>
+	<key>Sensor Width</key>
+	<real>22.3</real>
+	<key>Sensor Height</key>
+	<real>14.9</real>
 </dict>
 </plist>

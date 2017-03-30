@@ -15,6 +15,13 @@
 		F57D10F21CEB930200324173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57D10F01CEB930200324173 /* LaunchScreen.storyboard */; };
 		F57D10FD1CEB930200324173 /* DOF_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D10FC1CEB930200324173 /* DOF_CalculatorTests.swift */; };
 		F57D11081CEB930200324173 /* DOF_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57D11071CEB930200324173 /* DOF_CalculatorUITests.swift */; };
+		F5B6B6C01E8C8B8700D4033E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6B6B61E8C8B8700D4033E /* FMDatabase.m */; };
+		F5B6B6C11E8C8B8700D4033E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6B6B81E8C8B8700D4033E /* FMDatabaseAdditions.m */; };
+		F5B6B6C21E8C8B8700D4033E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6B6BA1E8C8B8700D4033E /* FMDatabasePool.m */; };
+		F5B6B6C31E8C8B8700D4033E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6B6BC1E8C8B8700D4033E /* FMDatabaseQueue.m */; };
+		F5B6B6C41E8C8B8700D4033E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B6B6BF1E8C8B8700D4033E /* FMResultSet.m */; };
+		F5B6B6C81E8C936000D4033E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B6B6C71E8C936000D4033E /* libsqlite3.tbd */; };
+		F5B6B6CA1E8C969300D4033E /* CameraInfo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F5B6B6C91E8C969300D4033E /* CameraInfo.sqlite */; };
 		F5D96A401E1C81B900955952 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D96A3F1E1C81B900955952 /* Settings.plist */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,20 @@
 		F57D11031CEB930200324173 /* DOF CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DOF CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D11071CEB930200324173 /* DOF_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOF_CalculatorUITests.swift; sourceTree = "<group>"; };
 		F57D11091CEB930200324173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5B6B6B41E8C8B8600D4033E /* DOF Calculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DOF Calculator-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5B6B6B51E8C8B8700D4033E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F5B6B6B61E8C8B8700D4033E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F5B6B6B71E8C8B8700D4033E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F5B6B6B81E8C8B8700D4033E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F5B6B6B91E8C8B8700D4033E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F5B6B6BA1E8C8B8700D4033E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F5B6B6BB1E8C8B8700D4033E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F5B6B6BC1E8C8B8700D4033E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F5B6B6BD1E8C8B8700D4033E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F5B6B6BE1E8C8B8700D4033E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F5B6B6BF1E8C8B8700D4033E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F5B6B6C71E8C936000D4033E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F5B6B6C91E8C969300D4033E /* CameraInfo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CameraInfo.sqlite; sourceTree = "<group>"; };
 		F5D96A3F1E1C81B900955952 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B6B6C81E8C936000D4033E /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +107,8 @@
 				F57D10FB1CEB930200324173 /* DOF CalculatorTests */,
 				F57D11061CEB930200324173 /* DOF CalculatorUITests */,
 				F57D10E31CEB930100324173 /* Products */,
+				F5B6B6C51E8C8B9300D4033E /* FMDB */,
+				F5B6B6C61E8C935F00D4033E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,10 +129,11 @@
 				F57D10E71CEB930100324173 /* CalculatorViewController.swift */,
 				F57D10E91CEB930100324173 /* SettingsViewController.swift */,
 				F57D10EB1CEB930100324173 /* Main.storyboard */,
-				F5D96A3F1E1C81B900955952 /* Settings.plist */,
-				F57D10EE1CEB930200324173 /* Assets.xcassets */,
 				F57D10F01CEB930200324173 /* LaunchScreen.storyboard */,
+				F57D10EE1CEB930200324173 /* Assets.xcassets */,
 				F57D10F31CEB930200324173 /* Info.plist */,
+				F5D96A3F1E1C81B900955952 /* Settings.plist */,
+				F5B6B6C91E8C969300D4033E /* CameraInfo.sqlite */,
 			);
 			path = "DOF Calculator";
 			sourceTree = "<group>";
@@ -129,6 +154,33 @@
 				F57D11091CEB930200324173 /* Info.plist */,
 			);
 			path = "DOF CalculatorUITests";
+			sourceTree = "<group>";
+		};
+		F5B6B6C51E8C8B9300D4033E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				F5B6B6B51E8C8B8700D4033E /* FMDatabase.h */,
+				F5B6B6B61E8C8B8700D4033E /* FMDatabase.m */,
+				F5B6B6B71E8C8B8700D4033E /* FMDatabaseAdditions.h */,
+				F5B6B6B81E8C8B8700D4033E /* FMDatabaseAdditions.m */,
+				F5B6B6B91E8C8B8700D4033E /* FMDatabasePool.h */,
+				F5B6B6BA1E8C8B8700D4033E /* FMDatabasePool.m */,
+				F5B6B6BB1E8C8B8700D4033E /* FMDatabaseQueue.h */,
+				F5B6B6BC1E8C8B8700D4033E /* FMDatabaseQueue.m */,
+				F5B6B6BD1E8C8B8700D4033E /* FMDB.h */,
+				F5B6B6BE1E8C8B8700D4033E /* FMResultSet.h */,
+				F5B6B6BF1E8C8B8700D4033E /* FMResultSet.m */,
+				F5B6B6B41E8C8B8600D4033E /* DOF Calculator-Bridging-Header.h */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
+		F5B6B6C61E8C935F00D4033E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5B6B6C71E8C936000D4033E /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +252,7 @@
 					F57D10E11CEB930100324173 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H9SXWJQ397;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 					F57D10F71CEB930200324173 = {
 						CreatedOnToolsVersion = 7.3;
@@ -246,6 +298,7 @@
 				F5D96A401E1C81B900955952 /* Settings.plist in Resources */,
 				F57D10EF1CEB930200324173 /* Assets.xcassets in Resources */,
 				F57D10ED1CEB930100324173 /* Main.storyboard in Resources */,
+				F5B6B6CA1E8C969300D4033E /* CameraInfo.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F57D10EA1CEB930100324173 /* SettingsViewController.swift in Sources */,
+				F5B6B6C21E8C8B8700D4033E /* FMDatabasePool.m in Sources */,
 				F57D10E61CEB930100324173 /* AppDelegate.swift in Sources */,
+				F5B6B6C31E8C8B8700D4033E /* FMDatabaseQueue.m in Sources */,
 				F57D10E81CEB930100324173 /* CalculatorViewController.swift in Sources */,
+				F5B6B6C01E8C8B8700D4033E /* FMDatabase.m in Sources */,
+				F5B6B6C41E8C8B8700D4033E /* FMResultSet.m in Sources */,
+				F5B6B6C11E8C8B8700D4033E /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,12 +425,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -410,12 +469,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -423,14 +483,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.CameronAnderson.DOF-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DOF Calculator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -438,14 +502,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = H9SXWJQ397;
 				INFOPLIST_FILE = "DOF Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.CameronAnderson.DOF-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DOF Calculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

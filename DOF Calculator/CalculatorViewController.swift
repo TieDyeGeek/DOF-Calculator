@@ -25,21 +25,25 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var totalDOFLabel: UILabel!
     @IBOutlet weak var focalWidthLabel: UILabel!
     
-    let INFINITY: Double = 16000000 //in mm
+    let INFINITY: Double = 1600000 //in mm
         //400000000 is 250 miles
         //80000000 is 50 miles
         //16000000 is 10 miles
+        //3200000 is 2 miles
+        //1600000 is 1 mile
     
     var pathToSettings: String!
     var settings: NSMutableDictionary!
 
     var unit = "ft" // setup as ft. will update below
-    //var unit: String!
+    var cameraFormatWidth: Double = 22.3   // setup for 7D will update below
+    var cameraFormatHeight: Double = 14.9  // values for Canon EOS 7D
     
     
     //define picker view data sources
     var lensData = [String]()
-    let fstopData = ["f/0.7","f/0.8","f/0.9","f/1.0","f/1.1","f/1.2","f/1.4","f/1.6","f/1.7","f/1.8","f/2","f/2.2","f/2.4","f/2.5","f/2.8","f/3.2","f/3.3","f/3.5","f/4","f/4.5","f/4.8","f/5.0","f/5.6","f/6.3","f/6.7","f/7.1","f/8","f/9","f/9.5","f/10","f/11","f/13","f/14","f/16","f/18","f/19","f/20","f/22","f/25","f/27","f/29","f/32","f/36","f/38","f/40","f/45","f/51","f/54","f/57","f/64"]
+    let fstopData = ["f/0.7","f/0.8","f/0.9","f/1.0","f/1.1","f/1.2","f/1.4","f/1.6","f/1.7","f/1.8","f/2","f/2.2","f/2.4","f/2.5","f/2.8","f/3.2","f/3.3","f/3.5","f/4","f/4.5","f/4.8","f/5.0","f/5.6","f/6.3","f/6.7","f/7.1","f/8","f/9","f/9.5","f/10","f/11","f/13","f/14","f/16","f/18","f/19","f/20","f/22","f/25"]
+    //let fstopData = ["f/0.7","f/0.8","f/0.9","f/1.0","f/1.1","f/1.2","f/1.4","f/1.6","f/1.7","f/1.8","f/2","f/2.2","f/2.4","f/2.5","f/2.8","f/3.2","f/3.3","f/3.5","f/4","f/4.5","f/4.8","f/5.0","f/5.6","f/6.3","f/6.7","f/7.1","f/8","f/9","f/9.5","f/10","f/11","f/13","f/14","f/16","f/18","f/19","f/20","f/22","f/25","f/27","f/29","f/32","f/36","f/38","f/40","f/45","f/51","f/54","f/57","f/64"]
     var distanceData = [Int]()
     
     
@@ -54,6 +58,8 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         //print(fileManager.fileExists(atPath: bundlePath!)) // prints true
         pathToSettings = fullDestPathString
 
+        // TODO!!!! check version number and delete copy in documents if it doens't match
+        
         do{
             try fileManager.copyItem(atPath: bundlePath!, toPath: fullDestPathString!)
         }catch{
@@ -65,7 +71,9 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         settings = NSMutableDictionary(contentsOfFile: pathToSettings!)
         print("unit is "+(settings?.value(forKey: "Unit") as? String)!)
         unit = (settings?.value(forKey: "Unit") as? String)!
-
+        cameraFormatWidth = (settings?.value(forKey: "Sensor Width") as? Double)!
+        cameraFormatHeight = (settings?.value(forKey: "Sensor Height") as? Double)!
+        
         //setup distance label to show unit
         distanceLabel.text = "Distance (\(unit))"
         calculate()
@@ -182,9 +190,9 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     func calculate(){
-        //TODO setup cameraFormat from secondViewController
-        let cameraFormatDiagnal: Double = 43.3
-        let cameraFormatWidth: Double = 36
+        //TODO setup cameraFormat from Settings
+        let cameraFormatDiagnal: Double = pow(pow(cameraFormatWidth, 2) + pow(cameraFormatHeight, 2), 0.5) // a^2 + b^2 = c^2
+        
         
         let focus = distanceData[lensFstopDistancePickerView.selectedRow(inComponent: 2)]
         let lens = Double(lensData[lensFstopDistancePickerView.selectedRow(inComponent: 0)].components(separatedBy: " ").first!)
@@ -211,25 +219,49 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         
         //update lables
+        
+        //Near focus
         nearFocusLabel.text = "\(nearFocus) \(unit)"
+        
+        //Focus
         focusLabel.text = "\(focus) \(unit)"
+        
+        //Far focus
         if farFocusMM > INFINITY {
             farFocusLabel.text = "∞"
         } else {
             farFocusLabel.text = "\(farFocus) \(unit)"
         }
-        nearHFocalLabel.text = "\(nearHFocal) \(unit)"
-        hFocalLabel.text = "\(hFocal) \(unit)"
+        
+        //Near H focal
+        if nearHFocal > INFINITY {
+            nearHFocalLabel.text = "∞"
+        } else {
+            nearHFocalLabel.text = "\(nearHFocal) \(unit)"
+        }
+        
+        //H focal
+        if hFocal > INFINITY {
+            hFocalLabel.text = "∞"
+        } else {
+            hFocalLabel.text = "\(hFocal) \(unit)"
+        }
+        
+        //Far H focal
         if farHFocalMM > INFINITY {
             farHFocalLabel.text = "∞"
         } else {
             farHFocalLabel.text = "\(farHFocal) \(unit)"
         }
+        
+        //Total DOF
         if (farFocusMM - nearFocusMM) > INFINITY {
             totalDOFLabel.text = "∞"
         } else {
             totalDOFLabel.text = "\(dof) \(unit)"
         }
+        
+        //Width at focus
         focalWidthLabel.text = "\(widthAtFocus) \(unit)"
       
             
