@@ -25,12 +25,13 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var totalDOFLabel: UILabel!
     @IBOutlet weak var focalWidthLabel: UILabel!
     
-    let INFINITY: Double = 1600000 //in mm
+    let INFINITY: Double = 400000 //in mm
         //400000000 is 250 miles
         //80000000 is 50 miles
         //16000000 is 10 miles
         //3200000 is 2 miles
         //1600000 is 1 mile
+        //400000 is .25 miles
     
     var pathToSettings: String!
     var settings: NSMutableDictionary!
@@ -190,7 +191,7 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     func calculate(){
-        //TODO setup cameraFormat from Settings
+        //cameraFormatWidth & Height updated in viewWillAppear
         let cameraFormatDiagnal: Double = pow(pow(cameraFormatWidth, 2) + pow(cameraFormatHeight, 2), 0.5) // a^2 + b^2 = c^2
         
         
@@ -200,13 +201,13 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         //get mm values
         let focusMM = convertToMM(value: focus, unit: unit)
-        let hfocalMM = (pow(lens!,2.0) / (getFNumber() * (cameraFormatDiagnal / 1500))) + focusMM
+        let hfocalMM = (pow(lens!,2.0) / (getFNumber() * (cameraFormatDiagnal / 1411.56))) + lens! //1400 ish number is for circle of confusion
         let nearFocusMM = calculateNearFocus(focus: focusMM, hfocal: hfocalMM, lens: lens!)
         let farFocusMM = calculateFarFocus(focus: focusMM, hfocal: hfocalMM, lens: lens!)
         let nearHFocalMM = calculateNearFocus(focus: hfocalMM, hfocal: hfocalMM, lens: lens!)
         let farHFocalMM = calculateFarFocus(focus: hfocalMM, hfocal: hfocalMM, lens: lens!)
         let widthAtFocusMM = 2 * focusMM * (cameraFormatWidth / (2 * lens!))
-    
+        
         
         //get unit values
         let nearFocus = round(convertToUnit(value: nearFocusMM, unit: unit)*100)/100
@@ -227,21 +228,21 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         focusLabel.text = "\(focus) \(unit)"
         
         //Far focus
-        if farFocusMM > INFINITY {
+        if farFocusMM > INFINITY || farFocusMM <= 0 {
             farFocusLabel.text = "∞"
         } else {
             farFocusLabel.text = "\(farFocus) \(unit)"
         }
         
         //Near H focal
-        if nearHFocal > INFINITY {
+        if nearHFocalMM > INFINITY {
             nearHFocalLabel.text = "∞"
         } else {
             nearHFocalLabel.text = "\(nearHFocal) \(unit)"
         }
         
         //H focal
-        if hFocal > INFINITY {
+        if hfocalMM > INFINITY {
             hFocalLabel.text = "∞"
         } else {
             hFocalLabel.text = "\(hFocal) \(unit)"
@@ -255,7 +256,7 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         
         //Total DOF
-        if (farFocusMM - nearFocusMM) > INFINITY {
+        if (farFocusMM - nearFocusMM) > INFINITY  || (farFocusMM - nearFocusMM) <= 0 {
             totalDOFLabel.text = "∞"
         } else {
             totalDOFLabel.text = "\(dof) \(unit)"
@@ -275,16 +276,14 @@ class CalculatorViewController: UIViewController, UIPickerViewDataSource, UIPick
         return (focus * (hfocal - lens) / (hfocal - focus))
     }
     
+    
     //return f number for calculations
     func getFNumber() -> Double {
         
         let fString = fstopData[lensFstopDistancePickerView.selectedRow(inComponent: 1)]
-        //let fValue = Double(fString.substring(from: fString.startIndex.successor().successor())
         let fValue = Double(fString.substring(from: fString.index(fString.startIndex, offsetBy: 2)))
         
-        let i = pow( pow(2.0,fValue!), 0.5)
-        
-        return pow(2, i/2.0)
+        return fValue!
     }
     
     
