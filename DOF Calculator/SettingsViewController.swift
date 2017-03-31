@@ -69,7 +69,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
        
         //setup cameraMakeData
-        let fileManager = FileManager.default
+        //let fileManager = FileManager.default //needed?
         let bundlePath = Bundle.main.path(forResource: "CameraInfo", ofType: "sqlite")
         print(bundlePath ?? "No Path -- Error", "\n") //prints the correct path
         
@@ -159,13 +159,14 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             print("Error: \(String(describing: cameraDB?.lastErrorMessage()))")
         }
         
+        //reset picker data shown
+        cameraMakeModelPicker.reloadComponent(1)
         
         //reset picker to first row
         cameraMakeModelPicker.selectRow(0, inComponent: 1, animated: true)
         print("cameraModel is reset to 0")
         
-        //reset picker data shown
-        cameraMakeModelPicker.reloadComponent(1)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -193,7 +194,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             } else {
                 print("No sensor data")
             }
-            print("Sensor Width is \(settings?.value(forKey: "Sensor Width"))")
+            print("Sensor Width is \(settings?.value(forKey: "Sensor Width") ?? "NOT DEFINED")")
 
 
             //sensor Height
@@ -210,7 +211,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             } else {
                 print("No sensor data")
             }
-            print("Sensor Height is \(settings?.value(forKey: "Sensor Height"))")
+            print("Sensor Height is \(settings?.value(forKey: "Sensor Height") ?? "NOT DEFINED")")
             //print("Sensor Height is "+(settings?.value(forKey: "Sensor Height") as? String)!)
             
             cameraDB?.close()
@@ -259,7 +260,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
             if component == 0 {
                 return screenWidth * 0.35
             } else if component == 1 {
-                return screenWidth * 0.5
+                return screenWidth * 0.57
             }
         } else if pickerView.tag == 1 {
             return screenWidth * 0.45
